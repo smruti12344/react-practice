@@ -4,6 +4,7 @@ import Header from './Components/Header.module';
 import { useState } from 'react';
 import LifeCycle from './Components/LifeCycle.Module';
 import Api from './Components/Api.module';
+import TwowayBindingClassComponent from './Components/Two-wayBindingClassComponent';
 
 function App() {
   const[name,setName]=useState("");
@@ -15,11 +16,16 @@ function App() {
     <header  className='d-flex align-items-center justify-content-center'>
     <h1 className='bg-dark  text-white p-4'>Hello welcome to react js !</h1>
     <h3>my self {name}</h3>
-    <Header onInputChange={inputHandler}/>
+    <Header className="border-bottom-2 border-white" onInputChange={inputHandler}/>
     </header>
-    <main>
+    <section className='d-flex justify-content-between'>
+    <main className='col-3'>
       <Api/>
     </main>
+    <aside className='col-2'>
+      <TwowayBindingClassComponent/>
+    </aside>
+    </section>
     <footer>
       <LifeCycle/>
     </footer>
