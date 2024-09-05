@@ -5,6 +5,7 @@ import { useState } from 'react';
 import LifeCycle from './Components/LifeCycle.Module';
 import Api from './Components/Api.module';
 import TwowayBindingClassComponent from './Components/Two-wayBindingClassComponent';
+import ApiClassComponent from './Components/ApiClassComponent';
 
 function App() {
   const[name,setName]=useState("");
@@ -22,8 +23,9 @@ function App() {
     <main className='col-3'>
       <Api/>
     </main>
-    <aside className='col-2'>
+    <aside className='col-8'>
       <TwowayBindingClassComponent/>
+      <ApiClassComponent/>
     </aside>
     </section>
     <footer>
