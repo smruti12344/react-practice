@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CardComponent from './CardComponent';
+import FormValidation from './FormValidation';
 
 export default class ApiClassComponent extends Component {
     constructor(props){
@@ -22,6 +23,7 @@ export default class ApiClassComponent extends Component {
     return (
      <>
      <CardComponent products={this.state.products}/>
+     <FormValidation/>
      </>
     )
   }
