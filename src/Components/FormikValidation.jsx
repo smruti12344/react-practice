@@ -1,5 +1,6 @@
 import React from 'react'
 import {Formik, useFormik} from 'formik'
+import YupValidation from './YupValidation'
 export default function FormikValidation() {
   const formik = useFormik({
     initialValues:{
@@ -61,6 +62,7 @@ export default function FormikValidation() {
             </dl>
             <button>submit</button>
         </form>
+        <YupValidation/>
     </div>
   )
 }
