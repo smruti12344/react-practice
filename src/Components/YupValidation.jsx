@@ -6,12 +6,14 @@ export default function FormikValidation() {
     initialValues:{
       userName:'',
       Password:'',
-      city:''
+      city:'',
+      email:''
     },
     validationSchema: yup.object({
        userName : yup.string().required("user name is required").matches(/^[a-zA-Z][a-zA-Z0-9!@#$%^&*()_+]*/),
        Password : yup.string().required("password required").min(8,'most be 8 character').matches(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+]).{8,}$/),
-       city: yup.string().required('please select one')
+       city: yup.string().required('please select one'),
+       email: yup.string().required("email required").matches(/^[a-z]/, "email must start with a lowercase letter")
     })
     ,
     onSubmit: (values)=>{
@@ -28,19 +30,23 @@ export default function FormikValidation() {
                 <dt>User Name</dt>
                 <dd><input type="text"{...formik.getFieldProps('userName')}  onChange={formik.handleChange} value={formik.values.userName}  />
                 </dd>
-                <dd className='text-bg-danger'>{formik.errors.userName}</dd>
+                <dd className='text-danger'>{formik.errors.userName}</dd>
                 <dt>Password</dt>
                 <dd><input type="password" {...formik.getFieldProps('Password')} onChange={formik.handleChange} value={formik.values.Password} />
                 </dd>
-                <dd className='text-bg-danger'>{formik.errors.Password}</dd>
+                <dd className='text-danger'>{formik.errors.Password}</dd>
                 <dt>Select City</dt>
                 <dd><select {...formik.getFieldProps('city')} onChange={formik.handleChange} value={formik.values.city}>
                     <option value="any">Choose..</option>
                     <option value="odisha">Odi</option>
                     <option value="hydrabad">Hyd</option>
                     </select></dd>
-                    <dd className='text-bg-danger'>{formik.errors.city}</dd>
+                    <dd className='text-danger'>{formik.errors.city}</dd>
+                    <dt>Email</dt>
+                    <dd><input type="email" {...formik.getFieldProps('email')} onBlur={formik.handleBlur} /></dd>
+                    <dd className='text-danger'>{formik.errors.email}</dd>
             </dl>
+
             <button>submit</button>
         </form>
     </div>
