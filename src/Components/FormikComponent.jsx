@@ -28,7 +28,9 @@ export function FormikComponent(){
                           alert(JSON.stringify(values));
                         }
                     }
-                 >
+                 >{
+                    props=>
+                 
                   <Form>
                        {
                        <div>
@@ -69,10 +71,11 @@ export function FormikComponent(){
                                 <ErrorMessage name="city"></ErrorMessage>
                             </dd>
                         </dl>
-                        <button>submit</button>
+                        <button disabled={props.isValid ? false : true} >submit</button>
                        </div>
                        }                   
                   </Form>
+}
                 </Formik>
             </div>
         </div>
