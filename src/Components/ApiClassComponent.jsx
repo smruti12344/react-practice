@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import CardComponent from './CardComponent';
 import FormValidation from './FormValidation';
 import FormikValidation from './FormikValidation';
 import FunctionHookComponent from './FunctionHookComponent';
 
+
 export default class ApiClassComponent extends Component {
+    
     constructor(props){
         super(props);
         this.state={
@@ -22,8 +24,10 @@ export default class ApiClassComponent extends Component {
        this.handleProducts(`https://fakestoreapi.com/products`)
     }
   render() {
+    
     return (
      <>
+    
      <CardComponent products={this.state.products}/>
      <FormValidation/>
      <FormikValidation/>
