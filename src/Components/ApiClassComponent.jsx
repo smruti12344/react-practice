@@ -3,6 +3,8 @@ import CardComponent from './CardComponent';
 import FormValidation from './FormValidation';
 import FormikValidation from './FormikValidation';
 import FunctionHookComponent from './FunctionHookComponent';
+import { CookieComponent } from './UseCokkieCompoent';
+import UseReducerComponent from './UseReducerComponent';
 
 
 export default class ApiClassComponent extends Component {
@@ -32,6 +34,8 @@ export default class ApiClassComponent extends Component {
      <FormValidation/>
      <FormikValidation/>
      <FunctionHookComponent></FunctionHookComponent>
+     <CookieComponent/>
+     <UseReducerComponent/>
      </>
     )
   }

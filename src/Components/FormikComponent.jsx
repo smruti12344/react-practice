@@ -112,7 +112,7 @@ import ApiClassComponent from "./ApiClassComponent";
 import Api from "./Api.module";
 
 // Capitalize context name
-export var UserDetails = createContext(null);
+// export var UserDetails = createContext(null);
 
 export function FormikComponent() {
     const [userData, setUserData] = useState({
@@ -123,7 +123,7 @@ export function FormikComponent() {
     });
 
     return (
-        <UserDetails.Provider value={userData}>
+        // <UserDetails.Provider value={userData}>
             <div className="container-fluid">
                 <h1>Formik form component</h1>
                 <div className="row">
@@ -204,9 +204,9 @@ export function FormikComponent() {
                 </div>
 
             </div>
-            <CardComponent />
+            /* <CardComponent />
             <ApiClassComponent />
            <Api/>
-        </UserDetails.Provider>
+        </UserDetails.Provider> */
     );
 }

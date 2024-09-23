@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { UserDetails } from './FormikComponent';
+import React, {  useEffect, useState } from 'react'
+// import { UserDetails } from './FormikComponent';
 
 export default function Api() {
-    const {userData} = useContext(UserDetails);
+    // const {userData} = useContext(UserDetails);
     const [mars,setMars]= useState(null);
     useEffect(()=>{
       fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY")
@@ -11,7 +11,7 @@ export default function Api() {
     },[])
   return (
     <div>
-        <h1>Hello user {userData.name}</h1>
+        {/* <h1>Hello user {userData.name}</h1> */}
         {
             mars && mars.photos && (
                 <table className="table table-hover">
