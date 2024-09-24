@@ -7,10 +7,12 @@ import Api from './Components/Api.module';
 import TwowayBindingClassComponent from './Components/Two-wayBindingClassComponent';
 import ApiClassComponent from './Components/ApiClassComponent';
 import { useUpperCase } from './Components/CustomHookComponent';
+import { useCapture } from './Components/useGenerate.component';
 
 function App() {
   const[name,setName]=useState("");
   const {data,error} = useUpperCase(name);
+  const {capture,getCode} = useCapture();
   function inputHandler(e){
     setName(e.target.value);
   }
@@ -36,6 +38,10 @@ function App() {
     </section>
     <footer>
       <LifeCycle/>
+      <div>
+        <input type='text' value={capture} readOnly />
+        <button onClick={()=>getCode()}>again</button>
+      </div>
     </footer>
     </div>
   );
